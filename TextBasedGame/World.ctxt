@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.target=World
+comment1.params=r\ c
+comment1.target=World(int,\ int)
+comment2.params=p\ d
+comment2.target=void\ create(java.lang.String[],\ java.lang.String[])
+comment3.params=x\ y
+comment3.target=Place\ place(int,\ int)
+comment4.params=p
+comment4.target=boolean\ hasFoe(Place)
+comment4.text=public\ void\ addItem(Item\ i){\n\ \ \ \ \ \ \ \ int\ r\ \=\ (int)(Math.random()\ *\ world.length);\n\ \ \ \ \ \ \ \ int\ c\ \=\ (int)(Math.random()\ *\ world[0].length);\n\ \ \ \ \ \ \ \ world[r][c].addItem(i);\n\ \ \ \ }\n\ \ \ \ public\ void\ addItem(Item\ i,\ int\ r,\ int\ c){\n\ \ \ \ \ \ \ \ world[r][c].addItem(i);\n}
+comment5.params=p
+comment5.target=boolean\ hasFriend(Place)
+comment6.params=f
+comment6.target=void\ addPerson(Person)
+comment7.params=f\ r\ c
+comment7.target=void\ addPerson(Person,\ int,\ int)
+comment8.params=
+comment8.target=java.lang.String\ toString()
+numComments=9

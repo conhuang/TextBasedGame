@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=Friend
+comment0.text=\n\ Write\ a\ description\ of\ class\ Friend\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=n\ d
+comment1.target=Friend(java.lang.String,\ java.lang.String)
+comment2.params=i
+comment2.target=void\ build(Item)
+numComments=3

@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=Foe
+comment0.text=\n\ Write\ a\ description\ of\ class\ Foe\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=s\ d\ i
+comment1.target=Foe(java.lang.String,\ java.lang.String,\ int)
+comment2.params=m
+comment2.target=void\ attack(Player)
+numComments=3
