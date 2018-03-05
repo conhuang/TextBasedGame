@@ -14,10 +14,11 @@ public class Foe extends Person
     }
 
     public void attack(Player m){
-        System.out.println(getName()+" retaliates!");
+        //System.out.println(getName()+" retaliates!");
         m.stamina -= (int)(Math.random()*25)+10;
         if(m.stamina<0){
             System.out.println("You have been defeated.");
         }
     }
+
 }

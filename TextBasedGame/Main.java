@@ -33,9 +33,7 @@ public class Main
             descriptions = Descriptions.getDesc();
 
             player.w.create(places,descriptions); 
-            
-            //places in places
-            
+              
 
             //creating enemies
             Foe[] enemies = new Foe[10];
@@ -50,8 +48,20 @@ public class Main
 
             //creating items
             String[] itemNames={"water","sword","cross-bow","newspaper","lantern",
-                    "tree branch","toaster","blueberries","grass","trees","deer","fish"};
-            player.w.place(0,2).addItem(new Edible(itemNames[7],0,true));
+                    "branch","berries","grass","trees","deer","fish"};
+
+            player.w.place(1,2).addItem(new Weapon(itemNames[5],(int)(Math.random()*30)));
+            player.w.place(2,1).addItem(new Weapon(itemNames[5],(int)(Math.random()*30)));
+            player.w.place(3,2).addItem(new Weapon(itemNames[5],(int)(Math.random()*30)));
+            player.w.place(2,3).addItem(new Weapon(itemNames[5],(int)(Math.random()*30)));
+            player.w.place(3,3).addItem(new Weapon(itemNames[5],(int)(Math.random()*30)));
+            player.w.place(1,3).addItem(new Edible(itemNames[0],5,false));
+            player.w.place(0,2).addItem(new Edible(itemNames[6],0,true));
+            player.w.place(0,1).addItem(new Edible(itemNames[10],10,false));
+            player.w.place(1,0).addItem(new Edible(itemNames[10],10,false));
+            player.w.place(4,4).addItem(new Edible(itemNames[10],10,false));
+            player.w.place(1,0).addItem(new Edible(itemNames[10],10,false));
+            
 
             //THE GAME
             System.out.println("\f=====================================");
@@ -101,6 +111,12 @@ public class Main
         }
 
         switch(words[0].toLowerCase()){
+            case "help":
+            System.out.println("Use commands to move around the island and defeat your "+
+                "enemies.\n\"go north/south/west/east\", \"take/drop _____\", \"attack with \n_____\","+
+                " \"inventory\", \"eat/drink _____\", \"sleep\", \"exit\".");
+            break;
+      
             case "go":
             if(words.length==1)
                 System.out.println("Where?");
@@ -120,7 +136,8 @@ public class Main
                         +" without being caught.\n");
                     }
                     if(x == 2){                        
-                        System.out.println("You have been jumped.");
+                        System.out.println("You have been jumped. \nYour opponent runs away as you struggle to get up\n"+
+                        "from the attack. You health has diminished. \nHopefully you can recover from this setback.");
                         p.currentPlace().getRandFoe().attack(p);
                     }
                     
@@ -142,19 +159,19 @@ public class Main
             case "drop":
             if(words.length==1)
                 System.out.println("What, drop dead? Please, I need more specificity out of you.");
-            else 
+            else {
+                System.out.println("Dropped.");
                 p.dropItem(words[1]);
+            }
             break;
 
             case "attack":          
             if(words.length>1){
-                if(words.length==4 && words[2].equalsIgnoreCase("with"))
-                    p.attack(p.currentPlace().getFoe(words[1]),p.getItem(words[3]));
-                else{
-                    System.out.println("What do you plan to attack "+ 
-                        //p.currentPlace().getFoe(words[1]).getName() + 
-                        " with?");
+                if(words.length==4 && words[3].equalsIgnoreCase("with")){
+                    p.attack(p.currentPlace().getRandFoe(),p.getItem(words[2]));
+                    System.out.println("Your enemy has weakened!"); 
                 }
+                
             }else
                 System.out.println("Attack what?");
             break;
@@ -166,8 +183,9 @@ public class Main
             case "eat":
             if(words.length==1)
                 System.out.println("Eat what?");
-            else if(p.currentPlace().hasItem(words[1]) && p.currentPlace().getItem(words[1]) instanceof Edible){
-                if(((Edible)p.currentPlace().getItem(words[1])).isPoisonous()){
+            else if(p.currentPlace().hasItem(words[1])||p.hasItem(Item.getItem(words[1])) 
+                    ){
+                if(((Edible)(p.currentPlace().getItem(words[1]))).isPoisonous()){
                     p.isAlive = false;
                     System.out.println("You just ate poisonous food. In a few hours you are"+
                         "\ngoing to drop dead and be eaten by hyenas.");

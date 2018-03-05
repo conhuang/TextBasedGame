@@ -35,6 +35,7 @@ public class Place extends Entity
                 return items.get(i);
         return null;
     }
+    
     public Item takeItem(String s){
         for(int i = 0; i < items.size(); i++)
             if(items.get(i).getName().equals(s))
@@ -74,19 +75,13 @@ public class Place extends Entity
                 return (Foe)people.get(i);
         return null;        
     }
-
-    public boolean hasFriend(){
-        for(Person p: people)
-            if(p instanceof Friend)
-                return true;
-        return false;
-    }
     
     public boolean canSleep(){
         if(this.hasPeople())
             return false;
         return true;
     }
+    
     public String getThings(){
         String temp = "";
         if(items.size()>0){
@@ -101,11 +96,13 @@ public class Place extends Entity
         }
         return temp;
     }
+    
     public boolean hasPeople(){
         if(people.size()>0)
             return true;
         return false;
     }
+    
     public String toString(){ 
         return super.getName() + "\n" + description;
     }

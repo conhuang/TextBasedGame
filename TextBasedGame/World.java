@@ -43,10 +43,6 @@ public class World
         return p.hasFoe();
     }
 
-    public boolean hasFriend(Place p){
-        return p.hasFriend();
-    }
-
     public void addPerson(Person f){
         int r = (int)(Math.random() * world.length);
         int c = (int)(Math.random() * world[0].length);

@@ -12,5 +12,7 @@ public class Item extends Entity
     {
         super(n);
         }
-    
+    public static Item getItem(String i){
+        return (new Item(i));
+    }
 }

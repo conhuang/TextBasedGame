@@ -11,11 +11,11 @@ public class Descriptions
     "There seems to be nothing dangerous here.", //small island 
     
     "You are on the outskirts of the island. You can see the vast ocean out before\n"+
-    " you and fish jumping in the ocean. Squinting far in the distance to the west,\n"+
+    "you and fish jumping in the ocean. Squinting far in the distance to the west,\n"+
     "you see a small island.",//ocean
     
     "You are in a beautiful meadow. There are what appear \n"+
-    "to be blueberry bushes and half-dead grass in sight. To the east, the meadow \n"+
+    "to be berry bushes and half-dead grass in sight. To the east, the meadow \n"+
     "continues, and far in the west, you see the ocean.",//meadow
     
     "You are in a beautiful meadow. There are what appear to be blueberry bushes and \n"+
