@@ -3,4 +3,6 @@ comment0.target=Item
 comment0.text=\n\ Write\ a\ description\ of\ class\ Item\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=n
 comment1.target=Item(java.lang.String)
-numComments=2
+comment2.params=i
+comment2.target=Item\ getItem(java.lang.String)
+numComments=3
